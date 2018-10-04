@@ -1,6 +1,3 @@
-# react-one-starter
-react-native-web and react-native in one project
-
 # Purpose 
 React one starter aims to enable you to build apps for web, iOS, android using the same files and source code
 
@@ -11,9 +8,11 @@ cd react-one-starter
 npm i
 ```
 
+
 ## Usage 
 1. To start developing for web `npm run web`
-2. to start devolving for native `npm run native`
+2. To start devolving for native `npm run native`
+
 
 ## Platforms specific code 
 1. You can name files as `file1.native.js` , `file1.web.js`, `file1.ios.js`, `file1.android.js` or just `file1.js`
