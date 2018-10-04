@@ -1,20 +1,27 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import ReactDOM from 'react-dom';
-//import { KeepAwake, registerRootComponent } from 'expo';
-import * as serviceWorker from './serviceWorker';
+import { Expo, Dom, serviceWorker } from './resolver';
 
-import App from './App';
+import App from './app';
 
 if (Platform.OS === 'web') {
-    ReactDOM.render(<App />, document.getElementById('root'));
+    Dom.render(<App />, document.getElementById('root'));
     // If you want your app to work offline and load faster, you can change
     // unregister() to register() below. Note this comes with some pitfalls.
     // Learn more about service workers: http://bit.ly/CRA-PWA
     serviceWorker.unregister();
+
+    /// Enabling hot reloading
+    if (module.hot) {
+        console.log('Connected');
+        module.hot.accept('./app', () => {
+            const Root = require('./app').default;
+            console.log(`%c ==========  Recived update in ${Date()}`, 'background: #222; color: #bada55');
+            Dom.render(<Root />, document.getElementById('root'));
+        });
+    }
 } else {
-    const { KeepAwake, registerRootComponent } = require('expo');
     // eslint-disable-next-line
-    __DEV__ && KeepAwake.activate();
-    registerRootComponent(App);
+    __DEV__ && Expo.KeepAwake.activate();
+    Expo.registerRootComponent(App);
 }
