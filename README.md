@@ -23,7 +23,7 @@ npm i
 1. Use VSCode 
 2. Prettier plugin configured with auto save
 3. ESLint plugin
-
+4. CSS-in-JS Plugin
 
 ## Tips 
 * You might need to turn off your firewall to use expo app on a real device , granting you are on the same network.
