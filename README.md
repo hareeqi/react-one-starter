@@ -31,3 +31,7 @@ npm i
 * You might need to turn off your firewall to use expo app on a real device , granting you are on the same network.
 * Color Highlight plugin 
 * Select highlight minimap 
+* Auto Close Tag plugin
+* Auto Rename Tag
+
+
