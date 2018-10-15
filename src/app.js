@@ -1,17 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Alert, OneProvider, Link, View, css } from 'react-one-ui';
 
 export default class App extends React.Component {
     render() {
         return (
-            <View style={styles.container}>
-                <Text>Open up app.js to starts working on your app!</Text>
-            </View>
+            <OneProvider>
+                <View style={styles.container}>
+                    <Link title="Click me" onPress={() => Alert.alert('Chane ./src/app.js and see the changes')} />
+                </View>
+            </OneProvider>
         );
     }
 }
 
-const styles = StyleSheet.create({
+const styles = css({
     container: {
         flex: 1,
         backgroundColor: '#fff',

@@ -1,10 +1,9 @@
 import React from 'react';
-import { Platform } from 'react-native';
-import { Expo, Dom, serviceWorker } from './resolver';
+import { Expo, Dom, serviceWorker, isWeb } from 'react-one-ui';
 
 import App from './app';
 
-if (Platform.OS === 'web') {
+if (isWeb) {
     Dom.render(<App />, document.getElementById('root'));
     // If you want your app to work offline and load faster, you can change
     // unregister() to register() below. Note this comes with some pitfalls.
